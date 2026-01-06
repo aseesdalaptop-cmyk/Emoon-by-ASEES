@@ -1,64 +1,91 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: radial-gradient(circle at top, #0b1d3a, #000);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  color: #e6f1ff;
 }
 
 .app {
-  width: 360px;
-  background: rgba(255,255,255,0.06);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.7);
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
 }
 
-header {
+.top {
   text-align: center;
+  padding: 20px;
 }
 
-.logo {
-  width: 60px;
+.top h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
-.tagline {
-  font-size: 13px;
-  color: #bbb;
+.nav {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.nav button {
+  background: #1b3b6f;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.section {
+  background: rgba(255,255,255,0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.book {
+  background: rgba(0,0,0,0.4);
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.book button {
+  background: #6aa9ff;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .card {
-  background: rgba(255,255,255,0.08);
-  border-radius: 15px;
+  background: rgba(0,0,0,0.5);
   padding: 15px;
-  margin: 15px 0;
+  border-radius: 10px;
   text-align: center;
 }
 
-.card img {
-  width: 60px;
-}
-
-button {
-  margin-top: 10px;
-  padding: 10px 15px;
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
   border: none;
-  border-radius: 10px;
-  background: #ffd700;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #ffea00;
 }
 
 footer {
   text-align: center;
+  opacity: 0.7;
+  margin-top: 20px;
+}
+
+.note {
   font-size: 12px;
-  margin-top: 10px;
-  color: #aaa;
+  opacity: 0.8;
 }

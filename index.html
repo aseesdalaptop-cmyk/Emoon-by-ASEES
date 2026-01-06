@@ -1,103 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emoon</title>
-
-  <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <header class="top">
-      <h1>🌙 Emoon</h1>
-      <p>Explore • Learn • Earn</p>
-    </header>
+  <header class="top">
+    <h1>🌙 Emoon</h1>
+    <p>Learn • Explore • Earn</p>
+  </header>
 
-    <nav class="nav">
-      <button onclick="showSection('home')">Home</button>
-      <button onclick="showSection('ebooks')">Ebooks</button>
-      <button onclick="showSection('affiliate')">Astronaut Program</button>
-      <button onclick="showSection('profile')">Profile</button>
-    </nav>
+  <nav class="nav">
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('ebooks')">Ebooks</button>
+    <button onclick="showSection('affiliate')">Astronaut Program</button>
+    <button onclick="showSection('profile')">Profile</button>
+  </nav>
 
-    <!-- HOME -->
-    <section id="home" class="section">
-      <h2>🚀 Welcome Astronaut</h2>
-      <p>
-        Emoon is a digital learning platform where you can read premium ebooks
-        and earn money through our Astronaut Affiliate Program.
-      </p>
-      <ul>
-        <li>📚 Premium ebooks</li>
-        <li>🧑‍🚀 50% affiliate commission</li>
-        <li>🌌 Moon-themed experience</li>
-      </ul>
-    </section>
+  <!-- HOME -->
+  <section id="home" class="section">
+    <h2>Welcome Astronaut! 🧑‍🚀</h2>
+    <p>Explore premium ebooks and earn through the Astronaut Program.</p>
+    <ul>
+      <li>📚 Premium ebooks</li>
+      <li>🧑‍🚀 50% Affiliate Commission</li>
+      <li>🌌 Moon, Astronaut & Satellite themed experience</li>
+    </ul>
+  </section>
 
-    <!-- EBOOKS -->
-    <section id="ebooks" class="section hidden">
-      <h2>📚 Ebook Store</h2>
+  <!-- EBOOKS -->
+  <section id="ebooks" class="section hidden">
+    <h2>📚 Ebook Store</h2>
+    <div class="book" id="book1">
+      <h3>Mind Power</h3>
+      <p>Price: ₹199</p>
+      <button onclick="buyBook('Mind Power')">Buy</button>
+    </div>
+    <div class="book" id="book2">
+      <h3>Money Psychology</h3>
+      <p>Price: ₹299</p>
+      <button onclick="buyBook('Money Psychology')">Buy</button>
+    </div>
+    <div class="book" id="book3">
+      <h3>Discipline Blueprint</h3>
+      <p>Price: ₹149</p>
+      <button onclick="buyBook('Discipline Blueprint')">Buy</button>
+    </div>
+  </section>
 
-      <div class="book">
-        <h3>Mind Power</h3>
-        <p>Price: ₹199</p>
-        <button onclick="buyBook('Mind Power')">Buy</button>
-      </div>
+  <!-- AFFILIATE -->
+  <section id="affiliate" class="section hidden">
+    <h2>🧑‍🚀 Astronaut Program</h2>
+    <p>Share your referral code and earn <b>50% commission</b> on every sale.</p>
+    <div class="card">
+      <p>Your Referral Code:</p>
+      <h3 id="refCode">----</h3>
+      <button onclick="copyRef()">Copy Code</button>
+    </div>
+    <p class="note">Earnings calculated manually by admin.</p>
+  </section>
 
-      <div class="book">
-        <h3>Money Psychology</h3>
-        <p>Price: ₹299</p>
-        <button onclick="buyBook('Money Psychology')">Buy</button>
-      </div>
+  <!-- PROFILE -->
+  <section id="profile" class="section hidden">
+    <h2>👤 Profile</h2>
+    <input id="nameInput" placeholder="Enter your name">
+    <button onclick="saveProfile()">Save</button>
+    <p id="profileInfo"></p>
+  </section>
 
-      <div class="book">
-        <h3>Discipline Blueprint</h3>
-        <p>Price: ₹149</p>
-        <button onclick="buyBook('Discipline Blueprint')">Buy</button>
-      </div>
-    </section>
+  <footer>
+    <p>🌙 Emoon App</p>
+    <p>Created by Asees</p>
+  </footer>
 
-    <!-- AFFILIATE -->
-    <section id="affiliate" class="section hidden">
-      <h2>🧑‍🚀 Astronaut Program</h2>
+</div>
 
-      <p>
-        Share your referral code and earn <b>50% commission</b> on every sale.
-      </p>
-
-      <div class="card">
-        <p>Your Referral Code:</p>
-        <h3 id="refCode">----</h3>
-        <button onclick="copyRef()">Copy Code</button>
-      </div>
-
-      <p class="note">
-        Earnings are calculated manually by the admin.
-      </p>
-    </section>
-
-    <!-- PROFILE -->
-    <section id="profile" class="section hidden">
-      <h2>👤 Profile</h2>
-
-      <input id="nameInput" placeholder="Enter your name"/>
-      <button onclick="saveProfile()">Save</button>
-
-      <p id="profileInfo"></p>
-    </section>
-
-    <footer>
-      <p>🌙 Emoon App</p>
-      <p>Created by Asees</p>
-    </footer>
-
-  </div>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

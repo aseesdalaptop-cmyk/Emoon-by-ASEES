@@ -37,6 +37,11 @@ body {
   border: none;
   padding: 10px;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.nav button:hover {
+  background: #6aa9ff;
 }
 
 .section {
@@ -62,6 +67,11 @@ body {
   border: none;
   padding: 8px;
   border-radius: 6px;
+  cursor: pointer;
+}
+
+.book button:hover {
+  background: #1b3b6f;
 }
 
 .card {

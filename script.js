@@ -1,7 +1,5 @@
 function showSection(id) {
-  document.querySelectorAll('.section').forEach(sec => {
-    sec.classList.add('hidden');
-  });
+  document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
   document.getElementById(id).classList.remove('hidden');
 }
 
@@ -10,14 +8,10 @@ function generateRef() {
 }
 
 function saveProfile() {
-  const name = document.getElementById("nameInput").value;
+  const name = document.getElementById("nameInput").value.trim();
   if (!name) return;
 
-  const profile = {
-    name: name,
-    ref: generateRef()
-  };
-
+  const profile = { name: name, ref: generateRef() };
   localStorage.setItem("emoon_profile", JSON.stringify(profile));
   loadProfile();
 }
@@ -27,15 +21,13 @@ function loadProfile() {
   if (!data) return;
 
   const profile = JSON.parse(data);
-  document.getElementById("profileInfo").innerText =
-    "Welcome, " + profile.name;
+  document.getElementById("profileInfo").innerText = "Welcome, " + profile.name;
   document.getElementById("refCode").innerText = profile.ref;
 }
 
 function buyBook(book) {
   alert(
-    "You selected '" + book +
-    "'.\n\nPayment is manual.\nContact admin with screenshot."
+    "You selected '" + book + "'\n\nPayment is manual.\nContact admin with screenshot."
   );
 }
 

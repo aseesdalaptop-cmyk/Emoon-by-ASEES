@@ -2,52 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emoon 🌙</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emoon</title>
 
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
-</head>
 
+</head>
 <body>
+
   <div class="app">
 
-    <header>
-      <img src="assets/moon.png" class="logo" />
-      <h1>EMOON</h1>
-      <p class="tagline">Astronaut Program • Earn 50% Commission 👨‍🚀</p>
+    <header class="top">
+      <h1>🌙 Emoon</h1>
+      <p>Explore • Learn • Earn</p>
     </header>
 
-    <main>
-      <div class="card">
-        <img src="assets/astronaut.png">
-        <h2>📘 Free Ebook</h2>
-        <p>Atomic Habits (Preview)</p>
-        <button onclick="openBook('Atomic Habits')">Read</button>
+    <nav class="nav">
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('ebooks')">Ebooks</button>
+      <button onclick="showSection('affiliate')">Astronaut Program</button>
+      <button onclick="showSection('profile')">Profile</button>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="section">
+      <h2>🚀 Welcome Astronaut</h2>
+      <p>
+        Emoon is a digital learning platform where you can read premium ebooks
+        and earn money through our Astronaut Affiliate Program.
+      </p>
+      <ul>
+        <li>📚 Premium ebooks</li>
+        <li>🧑‍🚀 50% affiliate commission</li>
+        <li>🌌 Moon-themed experience</li>
+      </ul>
+    </section>
+
+    <!-- EBOOKS -->
+    <section id="ebooks" class="section hidden">
+      <h2>📚 Ebook Store</h2>
+
+      <div class="book">
+        <h3>Mind Power</h3>
+        <p>Price: ₹199</p>
+        <button onclick="buyBook('Mind Power')">Buy</button>
       </div>
 
-      <div class="card">
-        <img src="assets/satellite.png">
-        <h2>🚀 Premium Ebook</h2>
-        <p>Millionaire Mindset</p>
-        <button onclick="buyBook('Millionaire Mindset', 99)">
-          Buy ₹99
-        </button>
+      <div class="book">
+        <h3>Money Psychology</h3>
+        <p>Price: ₹299</p>
+        <button onclick="buyBook('Money Psychology')">Buy</button>
       </div>
 
-      <div class="card">
-        <h2>👨‍🚀 Astronaut Program</h2>
-        <p>Share your code & earn 50%</p>
-        <button onclick="showReferral()">My Referral Code</button>
+      <div class="book">
+        <h3>Discipline Blueprint</h3>
+        <p>Price: ₹149</p>
+        <button onclick="buyBook('Discipline Blueprint')">Buy</button>
       </div>
-    </main>
+    </section>
+
+    <!-- AFFILIATE -->
+    <section id="affiliate" class="section hidden">
+      <h2>🧑‍🚀 Astronaut Program</h2>
+
+      <p>
+        Share your referral code and earn <b>50% commission</b> on every sale.
+      </p>
+
+      <div class="card">
+        <p>Your Referral Code:</p>
+        <h3 id="refCode">----</h3>
+        <button onclick="copyRef()">Copy Code</button>
+      </div>
+
+      <p class="note">
+        Earnings are calculated manually by the admin.
+      </p>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile" class="section hidden">
+      <h2>👤 Profile</h2>
+
+      <input id="nameInput" placeholder="Enter your name"/>
+      <button onclick="saveProfile()">Save</button>
+
+      <p id="profileInfo"></p>
+    </section>
 
     <footer>
-      <p>🌙 Created by Asees</p>
+      <p>🌙 Emoon App</p>
+      <p>Created by Asees</p>
     </footer>
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

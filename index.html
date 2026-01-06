@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emoon 🌙</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <header>
+      <img src="assets/moon.png" class="logo" />
+      <h1>EMOON</h1>
+      <p class="tagline">Astronaut Program • Earn 50% Commission 👨‍🚀</p>
+    </header>
+
+    <main>
+      <div class="card">
+        <img src="assets/astronaut.png">
+        <h2>📘 Free Ebook</h2>
+        <p>Atomic Habits (Preview)</p>
+        <button onclick="openBook('Atomic Habits')">Read</button>
+      </div>
+
+      <div class="card">
+        <img src="assets/satellite.png">
+        <h2>🚀 Premium Ebook</h2>
+        <p>Millionaire Mindset</p>
+        <button onclick="buyBook('Millionaire Mindset', 99)">
+          Buy ₹99
+        </button>
+      </div>
+
+      <div class="card">
+        <h2>👨‍🚀 Astronaut Program</h2>
+        <p>Share your code & earn 50%</p>
+        <button onclick="showReferral()">My Referral Code</button>
+      </div>
+    </main>
+
+    <footer>
+      <p>🌙 Created by Asees</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

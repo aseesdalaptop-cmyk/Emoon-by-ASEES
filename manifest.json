@@ -1,0 +1,21 @@
+{
+  "name": "Emoon",
+  "short_name": "Emoon",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#020824",
+  "theme_color": "#0b1d3a",
+  "description": "Astronaut themed ebook app with affiliate program. Created by Asees.",
+  "icons": [
+    {
+      "src": "assets/moon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/moon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

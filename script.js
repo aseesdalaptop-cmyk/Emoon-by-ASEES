@@ -1,26 +1,49 @@
-const user = {
-  referral: "EM" + Math.random().toString(36).substring(2,6).toUpperCase(),
-  commission: 0
-};
-
-function openBook(name) {
-  alert("📖 Opening " + name + "\nEnjoy your space journey 🌙");
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(sec => {
+    sec.classList.add('hidden');
+  });
+  document.getElementById(id).classList.remove('hidden');
 }
 
-function buyBook(name, price) {
-  if (confirm("Buy " + name + " for ₹" + price + "?")) {
-    user.commission += price * 0.5;
-    alert(
-      "✅ Purchase successful!\n" +
-      "Your commission: ₹" + user.commission
-    );
-  }
+function generateRef() {
+  return "EM-" + Math.random().toString(36).substring(2, 7).toUpperCase();
 }
 
-function showReferral() {
+function saveProfile() {
+  const name = document.getElementById("nameInput").value;
+  if (!name) return;
+
+  const profile = {
+    name: name,
+    ref: generateRef()
+  };
+
+  localStorage.setItem("emoon_profile", JSON.stringify(profile));
+  loadProfile();
+}
+
+function loadProfile() {
+  const data = localStorage.getItem("emoon_profile");
+  if (!data) return;
+
+  const profile = JSON.parse(data);
+  document.getElementById("profileInfo").innerText =
+    "Welcome, " + profile.name;
+  document.getElementById("refCode").innerText = profile.ref;
+}
+
+function buyBook(book) {
   alert(
-    "👨‍🚀 Your Referral Code:\n\n" +
-    user.referral +
-    "\n\nShare & earn 50% commission!"
+    "You selected '" + book +
+    "'.\n\nPayment is manual.\nContact admin with screenshot."
   );
 }
+
+function copyRef() {
+  const code = document.getElementById("refCode").innerText;
+  navigator.clipboard.writeText(code);
+  alert("Referral code copied!");
+}
+
+loadProfile();
+showSection("home");

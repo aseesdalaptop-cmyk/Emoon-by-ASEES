@@ -1,35 +1,54 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #0b2545, #02040f);
-  color: white;
-  text-align: center;
+*{box-sizing:border-box;font-family:system-ui,Arial}
+body{
+  margin:0;
+  background:radial-gradient(circle at top,#0b1d3a,#000);
+  color:#e6f1ff;
+}
+.app{max-width:980px;margin:auto;padding:10px}
+.topbar{text-align:center;padding:16px}
+.brand{font-size:30px;font-weight:700}
+.tag{opacity:.8;font-size:13px}
+
+.nav{
+  display:flex;gap:6px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:10px
+}
+.nav button{
+  background:#1b3b6f;color:#fff;border:0;
+  padding:8px 12px;border-radius:10px
 }
 
-header {
-  padding: 20px;
+.screen{
+  background:rgba(255,255,255,.06);
+  padding:16px;border-radius:14px;margin-bottom:14px
+}
+.hidden{display:none}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.card{
+  background:rgba(0,0,0,.4);
+  padding:16px;border-radius:12px;text-align:center
 }
 
-#ebook-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  padding: 20px;
+.books{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.book{
+  background:rgba(0,0,0,.45);
+  padding:12px;border-radius:12px
+}
+.book button{
+  width:100%;margin-top:8px;border:0;border-radius:8px;
+  padding:8px;background:#6aa9ff
 }
 
-.ebook {
-  background: #0d1b2a;
-  border-radius: 12px;
-  padding: 15px;
+.panel{
+  background:rgba(0,0,0,.45);
+  padding:14px;border-radius:12px;margin-bottom:10px;text-align:center
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  background: #4da3ff;
-  font-weight: bold;
-  cursor: pointer;
+input{
+  width:100%;padding:10px;border-radius:8px;border:0;margin-bottom:10px
 }
+
+.empty{opacity:.6;text-align:center;padding:20px}
+.footer{text-align:center;opacity:.6;margin:14px 0}
+.credit{margin-top:10px;font-weight:600}

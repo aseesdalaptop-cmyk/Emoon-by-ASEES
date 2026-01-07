@@ -1,22 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
   const list = document.getElementById("ebook-list");
 
   if (!list) {
-    alert("ebook-list div not found ❌");
+    console.error("ebook-list not found");
     return;
   }
 
   const ebooks = [
-    { title: "Ebook One" },
-    { title: "Ebook Two" },
-    { title: "Ebook Three" }
+    { title: "Start Online Income" },
+    { title: "Affiliate Mastery" },
+    { title: "Mindset of Winners" }
   ];
 
   ebooks.forEach(book => {
-    const div = document.createElement("div");
-    div.textContent = book.title;
-    list.appendChild(div);
+    const card = document.createElement("div");
+    card.textContent = book.title;
+    list.appendChild(card);
   });
 
 });

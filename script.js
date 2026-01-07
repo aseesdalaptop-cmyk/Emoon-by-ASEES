@@ -1,41 +1,63 @@
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
-  document.getElementById(id).classList.remove('hidden');
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-function generateRef() {
-  return "EM-" + Math.random().toString(36).substring(2, 7).toUpperCase();
-}
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
 
-function saveProfile() {
-  const name = document.getElementById("nameInput").value.trim();
-  if (!name) return;
+  // NAVIGATION
+  const navButtons = document.querySelectorAll(".nav button");
+  navButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const text = btn.textContent.toLowerCase();
+      if(text.includes("home")) showSection("home");
+      else if(text.includes("ebook")) showSection("ebooks");
+      else if(text.includes("astronaut")) showSection("affiliate");
+      else showSection("profile");
+    });
+  });
 
-  const profile = { name: name, ref: generateRef() };
-  localStorage.setItem("emoon_profile", JSON.stringify(profile));
-  loadProfile();
-}
+  // COPY REF
+  const copyBtn = document.querySelector("#refCode + button");
+  if(copyBtn){
+    copyBtn.addEventListener("click", () => {
+      const code = document.getElementById("refCode").innerText;
+      navigator.clipboard.writeText(code);
+      alert("Referral code copied!");
+    });
+  }
 
-function loadProfile() {
+  // BUY BUTTONS
+  document.querySelectorAll(".book button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const bookName = btn.parentElement.querySelector("h3").innerText;
+      alert(`You selected '${bookName}'\n\nPayment is manual. Contact admin.`);
+    });
+  });
+
+  // PROFILE SAVE
+  const saveBtn = document.querySelector("#profile button");
+  saveBtn.addEventListener("click", () => {
+    const name = document.getElementById("nameInput").value.trim();
+    if(!name) return;
+
+    const profile = {
+      name: name,
+      ref: "EM-" + Math.random().toString(36).substring(2,7).toUpperCase()
+    };
+    localStorage.setItem("emoon_profile", JSON.stringify(profile));
+    document.getElementById("profileInfo").innerText = `Welcome, ${profile.name}`;
+    document.getElementById("refCode").innerText = profile.ref;
+  });
+
+  // LOAD PROFILE ON START
   const data = localStorage.getItem("emoon_profile");
-  if (!data) return;
+  if(data){
+    const profile = JSON.parse(data);
+    document.getElementById("profileInfo").innerText = `Welcome, ${profile.name}`;
+    document.getElementById("refCode").innerText = profile.ref;
+  }
 
-  const profile = JSON.parse(data);
-  document.getElementById("profileInfo").innerText = "Welcome, " + profile.name;
-  document.getElementById("refCode").innerText = profile.ref;
-}
-
-function buyBook(book) {
-  alert(
-    "You selected '" + book + "'\n\nPayment is manual.\nContact admin with screenshot."
-  );
-}
-
-function copyRef() {
-  const code = document.getElementById("refCode").innerText;
-  navigator.clipboard.writeText(code);
-  alert("Referral code copied!");
-}
-
-loadProfile();
-showSection("home");
+  // DEFAULT SECTION
+  showSection("home");
+});

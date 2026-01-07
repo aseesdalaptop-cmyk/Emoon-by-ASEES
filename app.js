@@ -61,3 +61,4 @@ document.addEventListener("DOMContentLoaded", () => {
   // DEFAULT SECTION
   showSection("home");
 });
+

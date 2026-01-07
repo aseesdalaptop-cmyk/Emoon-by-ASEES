@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const ebooks = [
   {
     id: 1,
@@ -38,3 +39,5 @@ ebooks.forEach(book => {
 function buyEbook(title) {
   alert("You selected: " + title + "\nPayment system coming next 🚀");
 }
+});
+

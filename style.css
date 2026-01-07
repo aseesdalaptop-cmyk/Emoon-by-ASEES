@@ -1,141 +1,35 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #0b1d3a, #000);
-  color: #e6f1ff;
-}
-
-.app {
-  max-width: 900px;
-  margin: auto;
-  padding: 10px;
-}
-
-.top {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #0b2545, #02040f);
+  color: white;
   text-align: center;
+}
+
+header {
   padding: 20px;
 }
 
-.top h1 {
-  margin: 0;
-  font-size: 32px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-}
-
-.nav button {
-  background: #1b3b6f;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.nav button:hover {
-  background: #6aa9ff;
-}
-
-.section {
-  background: rgba(255,255,255,0.05);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.hidden {
-  display: none;
-}
-
-.book {
-  background: rgba(0,0,0,0.4);
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.book button {
-  background: #6aa9ff;
-  border: none;
-  padding: 8px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.book button:hover {
-  background: #1b3b6f;
-}
-
-.card {
-  background: rgba(0,0,0,0.5);
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  border: none;
-}
-
-footer {
-  text-align: center;
-  opacity: 0.7;
-  margin-top: 20px;
-}
-
-.note {
-  font-size: 12px;
-  opacity: 0.8;
-}
-.section-title {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.ebook-list {
+#ebook-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
-  padding: 10px;
+  padding: 20px;
 }
 
-.ebook-card {
-  background: linear-gradient(145deg, #0b1c2d, #050b14);
-  border-radius: 14px;
+.ebook {
+  background: #0d1b2a;
+  border-radius: 12px;
   padding: 15px;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-.ebook-card h3 {
-  margin: 0 0 8px;
-}
-
-.ebook-card p {
-  font-size: 14px;
-  opacity: 0.85;
-}
-
-.ebook-card button {
-  width: 100%;
-  padding: 10px;
+button {
   margin-top: 10px;
+  padding: 10px;
+  width: 100%;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #4da3ff;
-  color: #000;
   font-weight: bold;
   cursor: pointer;
 }

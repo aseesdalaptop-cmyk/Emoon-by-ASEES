@@ -1,64 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  function showSection(id) {
-    document.querySelectorAll('.section').forEach(sec => sec.classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
+const ebooks = [
+  {
+    id: 1,
+    title: "Start Online Income",
+    price: "₹199",
+    desc: "Beginner guide to earning online step by step."
+  },
+  {
+    id: 2,
+    title: "Affiliate Mastery",
+    price: "₹299",
+    desc: "Learn how to earn with referrals and commissions."
+  },
+  {
+    id: 3,
+    title: "Mindset of Winners",
+    price: "₹149",
+    desc: "Build discipline, focus and money mindset."
   }
+];
 
-  // NAVIGATION
-  const navButtons = document.querySelectorAll(".nav button");
-  navButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const text = btn.textContent.toLowerCase();
-      if(text.includes("home")) showSection("home");
-      else if(text.includes("ebook")) showSection("ebooks");
-      else if(text.includes("astronaut")) showSection("affiliate");
-      else showSection("profile");
-    });
-  });
+const list = document.getElementById("ebook-list");
 
-  // COPY REF
-  const copyBtn = document.querySelector("#refCode + button");
-  if(copyBtn){
-    copyBtn.addEventListener("click", () => {
-      const code = document.getElementById("refCode").innerText;
-      navigator.clipboard.writeText(code);
-      alert("Referral code copied!");
-    });
-  }
+ebooks.forEach(book => {
+  const card = document.createElement("div");
+  card.className = "ebook-card";
 
-  // BUY BUTTONS
-  document.querySelectorAll(".book button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const bookName = btn.parentElement.querySelector("h3").innerText;
-      alert(`You selected '${bookName}'\n\nPayment is manual. Contact admin.`);
-    });
-  });
+  card.innerHTML = `
+    <h3>${book.title}</h3>
+    <p>${book.desc}</p>
+    <strong>${book.price}</strong>
+    <button onclick="buyEbook('${book.title}')">Buy Ebook</button>
+  `;
 
-  // PROFILE SAVE
-  const saveBtn = document.querySelector("#profile button");
-  saveBtn.addEventListener("click", () => {
-    const name = document.getElementById("nameInput").value.trim();
-    if(!name) return;
-
-    const profile = {
-      name: name,
-      ref: "EM-" + Math.random().toString(36).substring(2,7).toUpperCase()
-    };
-    localStorage.setItem("emoon_profile", JSON.stringify(profile));
-    document.getElementById("profileInfo").innerText = `Welcome, ${profile.name}`;
-    document.getElementById("refCode").innerText = profile.ref;
-  });
-
-  // LOAD PROFILE ON START
-  const data = localStorage.getItem("emoon_profile");
-  if(data){
-    const profile = JSON.parse(data);
-    document.getElementById("profileInfo").innerText = `Welcome, ${profile.name}`;
-    document.getElementById("refCode").innerText = profile.ref;
-  }
-
-  // DEFAULT SECTION
-  showSection("home");
+  list.appendChild(card);
 });
 
+function buyEbook(title) {
+  alert("You selected: " + title + "\nPayment system coming next 🚀");
+}
